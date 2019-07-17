@@ -8,10 +8,42 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "start": "nodemon server",
+    "build": "webpack -w -d",
+    "seed": "node database/seed.js"
   },
   "dependencies": {
+    "axios": "^0.19.0",
+    "bluebird": "^3.5.5",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "images-downloader": "^1.0.3",
+    "images-scraper": "^2.0.11",
+    "limiter": "^1.1.4",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.6.3",
+    "nightmare": "^3.0.2",
+    "nodemon": "^1.19.1",
+    "react": "^16.8.6",
+    "react-collapsible": "^2.6.0",
+    "react-dom": "^16.8.6",
+    "react-modal": "^3.9.1",
+    "request": "^2.88.0",
+    "validator": "^11.1.0",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "style-loader": "^0.23.1"
   }
 }

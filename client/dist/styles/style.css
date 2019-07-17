@@ -1,0 +1,176 @@
+.app {
+  /* position:absolute; */
+  left: 50%;
+  font-family: "Avenir Next";
+  font-weight: 1000;
+}
+
+.carousel {
+  /* position: relative; */
+  display: flex;
+  /* justify-content: space-around; */
+  /* position: relative; */
+  /* float: left; */
+  position: center;
+  width: auto;
+}
+
+.carouselPic {
+  height: 230px;
+  width: 230px;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  opacity: 0.9;
+}
+
+.carouselPic:hover {
+  opacity: 1;
+  -webkit-filter: brightness(110%);
+}
+
+.showBird {
+  font-weight: normal;
+  font-size: 13px;
+  font-family: "Avenir LT W01 85 Heavy", arial, sans-serif;
+}
+
+.showBird2 {
+  text-align: right;
+  font-size: 13px;
+  font-family: "Avenir LT W01 85 Heavy", arial, sans-serif;
+  position: absolute;
+  right: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.wordDescription {
+  position: relative;
+}
+
+.prodfeat {
+  position: relative;
+  display: flex;
+}
+
+.layering {
+  /* text-align: center; */
+}
+
+.MandC {
+  /* text-align: center; */
+}
+
+.QandA {
+  /* text-align: center; */
+}
+
+.collapsibles {
+  text-align: center;
+  font-family: "Avenir LT W01 85 Heavy", arial, sans-serif;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-bottom: 1px solid gray;
+}
+
+/* .content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+} */
+
+.plus {
+  position: absolute;
+  right: 0;
+}
+
+/* .transition::after {
+  -webkit-transform: rotate(46deg);
+-moz-transform: rotate(46deg);
+-o-transform: rotate(46deg);
+-ms-transform: rotate(46deg);
+transform: rotate(46deg);
+} */
+
+.row {
+  display: flex;
+  /* justify-content: space-evenly */
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.5em;
+}
+
+.col {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  /* width: 48% */
+  flex: 1 1 48%;
+}
+/* delete section class in react components*/
+
+.col h3 {
+  margin-bottom: 0;
+}
+
+.collapsibles img {
+  width: 95%;
+}
+
+.learn {
+  color: #fff;
+  background-color: #000;
+  padding: 5px 10px;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+.learn:hover {
+  -webkit-filter: brightness(200%);
+  text-decoration: none;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
