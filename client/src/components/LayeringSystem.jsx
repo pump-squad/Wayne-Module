@@ -21,7 +21,7 @@ class LayeringSystem extends React.Component {
   render() {
     return (
       <div className='collapsibles'>
-        <Collapsible className='layering' trigger={<div className="prodfeat"><div>ARC'TERYX LAYERING SYSTEM</div><div className="plus">+</div></div>} >
+        <Collapsible className='layering' trigger={<div className="titles prodfeat">ARC'TERYX LAYERING SYSTEM<span className="plus">+</span></div>} >
           <div>
             <p>Layers are the instruments of keeping you dry, warm and using your energy efficiently. Put into the right systems, a good sequence of layers provides you with weather protection, moves moisture away from your skin, conserves or dissipates heat, and does this in the least amount of time.</p><br />
             <p>The graph shows where this product sits within a layering system. Use the layering guide to select additional pieces for your system and understand how they fit together. Find out more about how to layer on our Layering Page.</p>

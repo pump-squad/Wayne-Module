@@ -7,6 +7,7 @@ class ImageCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      modalImage: '',
 
     };
     this.handleClickOpen = this.handleClickOpen.bind(this);
@@ -19,7 +20,9 @@ class ImageCarousel extends React.Component {
     // Get the <span> element that closes the modal
     // When the user clicks on the button, open the modal 
     modal.style.display = "block";
-
+    this.setState({
+      modalImage: e.target.id
+    }, () => { console.log(this.state.modalImage) })
   }
 
   handleClickClose() {
@@ -27,7 +30,9 @@ class ImageCarousel extends React.Component {
     let modal = document.getElementById("image-modal");
     modal.style.display = "none";
     console.log(modal.style);
+
   }
+
 
   render() {
     return (
@@ -35,15 +40,14 @@ class ImageCarousel extends React.Component {
         <div id="image-modal" className="modal">
           <div className="modal-content">
             <span onClick={this.handleClickClose} className="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <img src={this.state.modalImage} />
           </div>
-
         </div>
 
         <div className='carousel'>
-          {images.map((x, index) => {
-            return <img key={index} onClick={this.handleClickOpen} className='carouselPic' src={x} />
-          })}
+          {this.props.product.imgUrl ? this.props.product.imgUrl.map((image, index) => (
+            <img key={index} id={image} onClick={this.handleClickOpen} className='carouselPic' src={image} />
+          )) : null}
         </div>
       </div>
     )

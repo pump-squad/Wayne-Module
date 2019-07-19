@@ -14,6 +14,17 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 /* SERVER FUNCTIONS FOR HANDLING THE ROUTES */
 
+app.get('/api/product/:id', (req, res) => {
+  let { id } = req.params;
+  db.Product.find({id})
+  .then((data) => {
+    res.status(200).send(data);
+  })
+  .catch((error) => {
+    res.status(404).send(error);
+  });
+})
+
 app.get('/api/text/:id', (req, res) => {
   let { id } = req.params;
   db.Text.find({ id })

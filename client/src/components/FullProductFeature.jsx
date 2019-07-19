@@ -10,54 +10,52 @@ class FullProductFeatures extends React.Component {
   render() {
     return (
       <div className='collapsibles'>
-        <Collapsible trigger={<div className="prodfeat"><div>FULL PRODUCT FEATURES</div><div className="plus">+</div></div>} >
+        <Collapsible trigger={<div className='titles'>FULL PRODUCT FEATURES<span className="plus">+</span></div>} >
           <div className="row">
             <div className="col">
-              <h3>Technical Features</h3>
-              {this.props.details.technicalFeatures ? this.props.details.technicalFeatures.map((x, index) => {
-                return <li key={index}>{x}</li>
+              <div>Technical Features</div>
+              {this.props.product.technicalFeatures ? this.props.product.technicalFeatures.map((x, index) => {
+                return <li className="prodfeat" key={index}>{x}</li>
               }) : null}
-
             </div>
             <div className="col">
-              <h3>Construction</h3>
-              {this.props.details.construction ? this.props.details.construction.map((x, index) => {
-                return <li key={index}>{x}</li>
+              <div>Construction</div>
+              {this.props.product.construction ? this.props.product.construction.map((x, index) => {
+                return <li className="prodfeat" key={index}>{x}</li>
               }) : null}
             </div>
           </div>
           <div className='row'>
             <div className="col">
-            <h3>Design & Fit</h3>
-            {/* {console.log(this.props.details.designAndFit)} */}
-            <li>{this.props.details.designAndFit}</li>
+            <div>Design & Fit</div>
+            <li className="prodfeat">{this.props.product.designAndFit}</li>
               </div>
             <div className="col">
-              <h3>Collar Configuration</h3>
-              {this.props.details.collarConfig ? this.props.details.collarConfig.map((x, index) => {
-                return <li key={index}>{x}</li>
+              <div>Collar Configuration</div>
+              {this.props.product.collarConfig ? this.props.product.collarConfig.map((x, index) => {
+                return <li className="prodfeat" key={index}>{x}</li>
               }) : null}
             </div>
           </div>
           <div className='row'>
             <div className="col">
-              <h3>Zipper & Fly Configuration</h3>
-              {this.props.details.zippersAndFly}
+              <div>Zipper & Fly Configuration</div>
+              <div className="prodfeat"><li>{this.props.product.zippersAndFly}</li></div>
             </div>
             <div className="col">
-              <h3>Hem Configuration</h3>
-              {this.props.details.hemConfig}
+              <div>Hem Configuration</div>
+              <div className="prodfeat"><li>{this.props.product.hemConfig}</li></div>
             </div>
           </div>
           <div className='row'>
             <div className="col">
-              <h3>Pocket Configuration</h3>
-              {this.props.details.pocketConfig}
+              <div>Pocket Configuration</div>
+              <div className="prodfeat"><li>{this.props.product.pocketConfig}</li></div>
 
             </div>
             <div className="col">
-              <h3>Fabric Treatment</h3>
-              {this.props.details.fabricTreatment}
+              <div>Fabric Treatment</div>
+              <div className="prodfeat"><li>{this.props.product.fabricTreatment}</li></div>
             </div>
           </div>
         </Collapsible>

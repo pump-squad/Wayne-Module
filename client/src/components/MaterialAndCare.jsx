@@ -6,19 +6,29 @@ class MaterialAndCare extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+
     };
   }
   render() {
     return (
       <div className='collapsibles'>
-        <Collapsible  className='MandC' trigger={<div className="prodfeat"><div>MATERIALS & CARE</div><div className="plus">+</div></div>} >
+        <Collapsible  className='MandC' trigger={<div className='titles prodfeat'>MATERIALS & CARE<span className="plus">+</span></div>} >
         <div className='row'>
           <div className='col'>
-            <h3>Materials</h3>
+            <div>Materials</div>
+            <ul className='prodfeat'>
+            {this.props.product.materials ? this.props.product.materials.map((x, index) => {
+              return <li key={index}>{x}</li>
+            }) : null}
+            </ul>
           </div>
           <div className='col'>
-            <h3>Care</h3>
+            <div>Care</div>
+            <ul className='prodfeat'>
+            {this.props.product.care ? this.props.product.care.map((x, index) => {
+              return <li key={index}>{x}</li>
+            }) : null}
+            </ul>
           </div>
         </div>
         </Collapsible>
