@@ -1,7 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-
-let images = ['https://pumpsquad.s3-us-west-1.amazonaws.com/gallery/1.jpg', 'https://pumpsquad.s3-us-west-1.amazonaws.com/gallery/2.jpg', 'https://pumpsquad.s3-us-west-1.amazonaws.com/gallery/3.jpg', "https://i.imgur.com/FkGOpYi.jpg"];
 
 class ImageCarousel extends React.Component {
   constructor(props) {

@@ -4,7 +4,6 @@ import FullProductFeatures from './FullProductFeature.jsx';
 import LayeringSystem from './LayeringSystem.jsx';
 import MaterialAndCare from './MaterialAndCare.jsx';
 import QandA from './QandA.jsx';
-import Collapsible from 'react-collapsible';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -12,10 +11,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       product: ''
-
-
     };
     this.fetchProduct = this.fetchProduct.bind(this);
+    this.handleClickOpen = this.handleClickOpen.bind(this);
+    this.handleClickClose = this.handleClickClose.bind(this);
   }
 
   componentDidMount() {
@@ -34,48 +33,19 @@ class App extends React.Component {
     })
   }
 
-  // fetchText() {
-  //   let id = 0;
-  //   axios.get(`/api/text/${id}`)
-  //     .then(({ data }) => {
-  //       this.setState({
-  //         text: data[0]
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.log(`fetchText failed: ${error}`);
-  //     })
-  // }
+  handleClickOpen() {
+    let modal = document.getElementById("image-modal");
+    // Get the <span> element that closes the modal
+    // When the user clicks on the button, open the modal 
+    modal.style.display = "block";
+  }
 
-  // fetchQandA() {
-  //   let id = 0;
-  //   axios.get(`/api/qanda/${id}`)
-  //     .then((data) => {
-  //       console.log(data[0]);
-  //     }, () => {
-  //       this.setState({
-  //         questionObject: data
-  //       })
-  //     })
-  //     .catch((error) => {
-  //       console.log(`fetchQandA failed: ${error}`);
-  //     })
-  // }
-
-  // fetchGallery() {
-  //   let id = 0;
-  //   axios.get(`/api/gallery/${id}`)
-  //     .then(({ data }) => {
-  //       console.log(`gallery successful ${data}`);
-  //     }, () => {
-  //       this.setState({
-  //         galleryUrl: data
-  //       })
-  //     })
-  //     .catch((error) => {
-  //       console.log(`gallery failed: ${error}`);
-  //     })
-  // }
+  handleClickClose() {
+    // When the user clicks on <span> (x), close the modal
+    let modal = document.getElementById("image-modal");
+    modal.style.display = "none";
+  }
+  
 
   render() {
     return (
@@ -85,7 +55,7 @@ class App extends React.Component {
         <div className="wordDescription">
           <span className='showBird'>@ARCTERYX – </span>
           <span className='showBird3'>show us your bird by uploading a photo of your gear in action!</span>
-          <span className='showBird2'>ADD A PHOTO</span>
+          <span className='showBird2 question-modal-content' onClick={this.handleClickOpen}>ADD A PHOTO</span>
         </div>
         <div>
           <FullProductFeatures product={this.state.product} />

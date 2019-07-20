@@ -1,6 +1,8 @@
 import React from 'react';
 import Collapsible from 'react-collapsible';
 import moment from 'moment';
+import { IoIosThumbsUp } from "react-icons/io";
+import { IoIosThumbsDown } from "react-icons/io";
 
 class QandA extends React.Component {
   constructor(props) {
@@ -120,7 +122,7 @@ class QuestionContent extends React.Component {
     this.state = {
       helpful: false,
       likes: 0,
-      dislikes: 0
+      dislikes: 0,
 
     };
     this.helpfulClick = this.helpfulClick.bind(this);
@@ -147,24 +149,23 @@ class QuestionContent extends React.Component {
     return (
       <div>
         <p className='question-body'>{this.props.questionContent}</p>
-        <div>
+        <div className='age-separator'>
           <span className='age-activity1'>Age: </span>
           <span className='age-activity2'>25-34</span>
         </div>
-        <div></div>
         <div>
           <span className='age-activity1'>Activity: </span>
           <span className='age-activity2'>Coding</span>
         </div>
-        <div>
+        <div className='question-info'>
           <span className='question-asked-elapsed-time'>{moment(this.props.date, "MMDDYYYY").fromNow()}</span>
-          <br/>
+          <br />
           <span className='question-asked-name'>Steve</span><span className='question-asked-location'>Iceland</span>
         </div>
         <div className='question-thumbs'>
           <span className='thumbs-question'>
-            <button onClick={this.helpfulClick}>thumbs up {this.state.likes}</button>
-            <button onClick={this.unhelpfulClick}>thumbs down {this.state.dislikes} </button>
+            <button onClick={this.helpfulClick}><IoIosThumbsUp/>{this.state.likes}</button>
+            <button onClick={this.unhelpfulClick}><IoIosThumbsDown/>{this.state.dislikes} </button>
           </span>
           <span className='answer-this-question'>Answer this question</span>
         </div>
@@ -175,34 +176,63 @@ class QuestionContent extends React.Component {
   }
 }
 
-const Answer = (props) => {
-  return (
-    <div>
-      <div className='count-separator'>
-        <span className='same-question-count'>1</span>
-        <span className='separator'> | </span>
-        <span className='also-have-question'>I have this question too</span>
-      </div>
-      <div className='answer-section'>
-        <h2 className='answer-heading'>ANSWERS</h2>
-        {/* <img className='staff-badge' align='right' src='https://pumpsquad.s3-us-west-1.amazonaws.com/gallery/staffBadge.jpg'/> */}
-        <p className="image">image goes here</p>
-        <div className='answer-body-big'>
-          <p className='answer-body-small'>{props.answer}</p>
+class Answer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      answerLikes: 0,
+      answerDislikes: 0
+    };
+
+    this.likeAnswer = this.likeAnswer.bind(this);
+    this.dislikeAnswer = this.dislikeAnswer.bind(this);
+  }
+
+  likeAnswer() {
+    let newLikes = this.state.answerLikes;
+    newLikes++;
+    this.setState({
+      answerLikes: newLikes
+    })
+  }
+
+  dislikeAnswer() {
+    let newDislikes = this.state.answerDislikes;
+    newDislikes++;
+    this.setState({
+      answerDislikes: newDislikes
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <div className='count-separator'>
+          <span className='same-question-count'>1</span>
+          <span className='separator'> | </span>
+          <span className='also-have-question'>I have this question too</span>
         </div>
-        <div className='misc-answer'>
-          <div className='time-elapsed'>1 month, 3 weeks ago</div>
-          <div className='staff-name'>
-            <span>Gabby</span>
-            <span className='thumbs-answer'>
-              <button>thumbs up</button>
-              <button>thumbs down</button>
-            </span>
+        <div className='answer-section'>
+          <h2 className='answer-heading'>ANSWERS</h2>
+          {/* <img className='staff-badge' align='right' src='https://pumpsquad.s3-us-west-1.amazonaws.com/gallery/staffBadge.jpg'/> */}
+          <p className="image">image goes here</p>
+          <div className='answer-body-big'>
+            <p className='answer-body-small'>{this.props.answer}</p>
+          </div>
+          <div className='misc-answer'>
+            <div className='time-elapsed'>1 month, 3 weeks ago</div>
+            <div className='staff-name'>
+              <span>Gabby</span>
+              <span className='thumbs-answer'>
+                <button onClick={this.likeAnswer}><IoIosThumbsUp/> {this.state.answerLikes} </button>
+                <button onClick={this.dislikeAnswer}><IoIosThumbsDown/> {this.state.answerDislikes} </button>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 // class Answer extends React.Component {
