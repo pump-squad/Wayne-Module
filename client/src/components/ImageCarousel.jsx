@@ -19,14 +19,13 @@ class ImageCarousel extends React.Component {
     modal.style.display = "block";
     this.setState({
       modalImage: e.target.id
-    }, () => { console.log(this.state.modalImage) })
+    });
   }
 
   handleClickClose() {
     // When the user clicks on <span> (x), close the modal
     let modal = document.getElementById("image-modal");
     modal.style.display = "none";
-    console.log(modal.style);
 
   }
 

@@ -8,11 +8,6 @@ class QandA extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      q1: false,
-      q2: false,
-      q3: false,
-      q4: false,
-      q5: false,
       expandButton: false,
       sortSelection: '',
       answered: true
@@ -164,8 +159,8 @@ class QuestionContent extends React.Component {
         </div>
         <div className='question-thumbs'>
           <span className='thumbs-question'>
-            <button onClick={this.helpfulClick}><IoIosThumbsUp/>{this.state.likes}</button>
-            <button onClick={this.unhelpfulClick}><IoIosThumbsDown/>{this.state.dislikes} </button>
+            <button onClick={this.helpfulClick}><IoIosThumbsUp />{this.state.likes}</button>
+            <button onClick={this.unhelpfulClick}><IoIosThumbsDown />{this.state.dislikes} </button>
           </span>
           <span className='answer-this-question'>Answer this question</span>
         </div>
@@ -213,9 +208,12 @@ class Answer extends React.Component {
           <span className='also-have-question'>I have this question too</span>
         </div>
         <div className='answer-section'>
-          <h2 className='answer-heading'>ANSWERS</h2>
-          {/* <img className='staff-badge' align='right' src='https://pumpsquad.s3-us-west-1.amazonaws.com/gallery/staffBadge.jpg'/> */}
-          <p className="image">image goes here</p>
+          <div>
+            <h2 className='answer-heading'>ANSWERS</h2>
+            <img className='staff-badge' src='https://pumpsquad.s3-us-west-1.amazonaws.com/gallery/staffBadge.jpg' />
+          </div>
+          <br/>
+          {/* <p className="image">image goes here</p> */}
           <div className='answer-body-big'>
             <p className='answer-body-small'>{this.props.answer}</p>
           </div>
@@ -224,8 +222,8 @@ class Answer extends React.Component {
             <div className='staff-name'>
               <span>Gabby</span>
               <span className='thumbs-answer'>
-                <button onClick={this.likeAnswer}><IoIosThumbsUp/> {this.state.answerLikes} </button>
-                <button onClick={this.dislikeAnswer}><IoIosThumbsDown/> {this.state.answerDislikes} </button>
+                <button onClick={this.likeAnswer}><IoIosThumbsUp /> {this.state.answerLikes} </button>
+                <button onClick={this.dislikeAnswer}><IoIosThumbsDown /> {this.state.answerDislikes} </button>
               </span>
             </div>
           </div>
@@ -234,27 +232,5 @@ class Answer extends React.Component {
     )
   }
 }
-
-// class Answer extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       sameQuestionCount: 0
-//     };
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <div className='also-have-question'>I have this question too</div>
-//         <div className='answer-section'>
-//           <h2 className='answer-heading'>ANSWERS</h2>
-//           <div className='answer-body-big'>
-//             <p className='answer-body-small'>{this.props.answer}</p>
-//           </div>
-//         </div>
-//       </div>
-//     )
-//   }
-// }
 
 export default QandA;
