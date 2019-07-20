@@ -26,7 +26,7 @@ class App extends React.Component {
     axios.get(`/api/product/${randomProductId}`)
       .then((data) => {
         let product = data.data[0];
-        this.setState({ product }, () => { console.log(`product`, this.state.product) })
+        this.setState({ product })
       })
       .catch((error) => {
         console.log(error);

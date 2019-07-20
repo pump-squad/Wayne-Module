@@ -26,7 +26,7 @@ class QandA extends React.Component {
   changeSortSelection(e) {
     this.setState({
       sortSelection: e.target.value
-    }, () => { console.log(this.state.sortSelection) })
+    })
   }
 
   expandButtonClick() {
@@ -70,7 +70,7 @@ const QuestionContentAnswer = (props) => {
   return (
     <div>
       {props.product.questionHeader ? props.product.questionHeader.map((questionHeader, index) => (
-        <Question questionHeader={questionHeader} questionContent={props.product.questionContent} answer={props.product.answer} date={props.product.date} />
+        <Question questionHeader={questionHeader} questionContent={props.product.questionContent} answer={props.product.answer} date={props.product.date} age={props.product.age} key={index} />
       )) : null}
     </div>
   )
@@ -87,7 +87,7 @@ class Question extends React.Component {
   expandQuestionBody() {
     this.setState({
       expandQuestion: !this.state.expandQuestion
-    }, () => console.log(this.state.expandQuestion))
+    })
   }
 
   render() {
@@ -102,7 +102,7 @@ class Question extends React.Component {
             <span className='answer-count'>1 answer</span>
           </div>
           <div>
-            {this.state.expandQuestion ? <div><QuestionContent questionContent={this.props.questionContent} answer={this.props.answer} date={this.props.date} /></div> : null}
+            {this.state.expandQuestion ? <div><QuestionContent questionContent={this.props.questionContent} answer={this.props.answer} date={this.props.date} age={this.props.age} /></div> : null}
             <div className='question-divider'></div>
           </div>
         </div>
@@ -146,7 +146,7 @@ class QuestionContent extends React.Component {
         <p className='question-body'>{this.props.questionContent}</p>
         <div className='age-separator'>
           <span className='age-activity1'>Age: </span>
-          <span className='age-activity2'>25-34</span>
+          <span className='age-activity2'>{this.props.age}</span>
         </div>
         <div>
           <span className='age-activity1'>Activity: </span>
