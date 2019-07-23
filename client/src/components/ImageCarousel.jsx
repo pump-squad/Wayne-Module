@@ -33,7 +33,7 @@ class ImageCarousel extends React.Component {
   render() {
     return (
       <div>
-        <div id="image-modal" className="modal">
+        <div id="image-modal" className="image-modal">
           <div className="modal-content">
             <span onClick={this.handleClickClose} className="close">&times;</span>
             <img src={this.state.modalImage} />

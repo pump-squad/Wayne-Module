@@ -196,7 +196,7 @@ transform: rotate(46deg);
   color: #555555;
 }
 
-.modal {
+.image-modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
